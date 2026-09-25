@@ -6,10 +6,13 @@ import io.restassured.response.ValidatableResponse;
 
 import static org.hamcrest.Matchers.equalTo;
 
+import org.testng.annotations.Test;
+
 import static io.restassured.RestAssured.*;
 
 public class R1_GetUserTest {
-	public static void main(String []args) {
+ @Test
+ public void getUserTest() {
 		RestAssured.baseURI="https://reqres.in";
 		String resp1=given().when().get("/api/users/2").then().log().all().assertThat()
 				.statusCode(200).body("data.id", equalTo(2)).extract().response().asString();

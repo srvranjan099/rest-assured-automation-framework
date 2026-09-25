@@ -6,11 +6,14 @@ import io.restassured.response.Response;
 
 import static org.hamcrest.Matchers.equalTo;
 
+import org.testng.annotations.Test;
+
 import static io.restassured.RestAssured.*;
 
 public class R2_CreateUserTest {
 
-	public static void main(String[] args) {
+@Test
+public void createUser() {
 		// TODO Auto-generated method stub
 		RestAssured.baseURI="https://reqres.in";
 		String resp2=given().contentType("application/json").accept("application/json").header("x-test","Saurav").body("{\r\n"

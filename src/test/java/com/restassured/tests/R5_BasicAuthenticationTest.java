@@ -3,9 +3,12 @@ package com.restassured.tests;
 import io.restassured.RestAssured;
 import static io.restassured.RestAssured.*;
 
-public class R5_BasicAuthentication {
+import org.testng.annotations.Test;
 
-	public static void main(String[] args) {
+public class R5_BasicAuthenticationTest {
+
+	@Test
+	public void basicAuth() {
 		// TODO Auto-generated method stub
 		RestAssured.baseURI="https://httpbin.org";
 		given().auth().basic("user", "passwd").when().get("/basic-auth/user/passwd").then().log().all()
