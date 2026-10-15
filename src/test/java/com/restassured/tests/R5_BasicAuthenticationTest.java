@@ -12,6 +12,7 @@ public class R5_BasicAuthenticationTest {
 		// TODO Auto-generated method stub
 		RestAssured.baseURI="https://httpbin.org";
 		given().auth().basic("user", "passwd").when().get("/basic-auth/user/passwd").then().log().all()
+		
 		.assertThat().statusCode(200);
 		
 
